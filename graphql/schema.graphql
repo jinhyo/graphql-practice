@@ -1,3 +1,19 @@
+type Jin {
+  name: String!
+  age: Int!
+  gender: String!
+}
+
+type Person {
+  id: Int!
+  name: String!
+  age: Int!
+  gender: String!
+}
+
 type Query {
   name: String!
+  jin: Jin!
+  people: [Person]!
+  person(id: Int!): Person!
 }
