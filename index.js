@@ -1,8 +1,8 @@
 const { GraphQLServer } = require("graphql-yoga");
-const resolvers = require("./graphql/resolvers");
+const resolvers = require("./REST-api/resolvers");
 
 const server = new GraphQLServer({
-  typeDefs: "graphql/schema.graphql",
+  typeDefs: "REST-api/schema.graphql",
   resolvers,
 });
 server.start(() => console.log("Server is running on localhost:4000"));
