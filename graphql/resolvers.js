@@ -1,11 +1,13 @@
-const { jin, people, getPersonById } = require("./db");
+const { getMovies, getMovieById, addMovie, deleteMovie } = require("./db");
 
 const resolvers = {
   Query: {
-    name: () => "hi Jin",
-    jin: () => jin,
-    people: () => people,
-    person: (_, { id }) => getPersonById(id),
+    movies: () => getMovies(),
+    movie: (_, { id }) => getMovieById(id),
+  },
+  Mutation: {
+    addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id),
   },
 };
 
